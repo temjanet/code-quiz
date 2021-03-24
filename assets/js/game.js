@@ -14,8 +14,9 @@ let availableQuesions = [];
 
 let questions = [];
 
+//link for quiz questions
 fetch(
-    'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+    'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple'
 )
     .then((res) => {
         return res.json();
@@ -68,7 +69,7 @@ getNewQuestion = () => {
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-    //Update the progress bar
+    //update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
